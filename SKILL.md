@@ -25,8 +25,8 @@ cp scripts/mail_check_*.py ~/.hermes/scripts/
 # 2. Create agent directories
 mkdir -p /your/mail/dir/{main,espinoza}/{inbox,sent}
 
-# 3. Set sender identity in each profile's .env
-#    echo "HERMES_MAIL_SENDER=main" >> ~/.hermes/.env
+# 3. Set sender identity in each profile (add to environment)
+#    export HERMES_MAIL_SENDER=main
 
 # 4. Send a test message
 python /your/mail/dir/hermes_mail.py send --sender main --to espinoza \

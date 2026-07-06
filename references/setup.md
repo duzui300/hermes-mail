@@ -28,21 +28,21 @@ AGENTS = ["main", "espinoza", "coding-helper"]
 
 ## Step 3: Set Agent Identities
 
-In each Hermes profile's `.env`:
-```env
-# ~/.hermes/.env (main profile)
-HERMES_MAIL_SENDER=main
+Set the sender identity environment variable in each Hermes profile:
 
-# /other/profile/.env (espinoza profile)
-HERMES_MAIL_SENDER=espinoza
+```bash
+# Main profile
+export HERMES_MAIL_SENDER=main
+
+# espinoza profile
+export HERMES_MAIL_SENDER=espinoza
 ```
 
 ## Step 4: Install Cron Scripts
 
-Copy the cron wrapper scripts to each profile's `scripts/` directory:
+Copy the cron wrapper scripts to each profile's scripts directory:
 ```bash
-cp scripts/mail_check_main.py ~/.hermes/scripts/
-cp scripts/mail_check_espinoza.py /other/profile/scripts/
+cp scripts/mail_check_agent.py <your-hermes-home>/scripts/
 ```
 
 Edit the `MAIL` path in each script to match your mail root directory.
